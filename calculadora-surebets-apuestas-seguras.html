@@ -27,7 +27,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col"></th>
+              <th scope="col">Opciones</th>
               <th scope="col">Cuotas</th>
               <th scope="col">Probabilidad</th>
               <th scope="col">Cantidad de apuesta</th>
@@ -40,23 +40,32 @@
               <th scope="row">Cuota 1</th>
               <td><input type="text" class="form-control" id="cuota1" aria-label="Cuota con dos decimales" placeholder="Cuota con dos decimales">
               </td>
-              <td></td>
-              <td></td>
+              <td id="muestraProbabilidadCuota1"></td>
+              <td id="cantidadApuestaCuota1"></td>
+              <td id="gananciaCuota1"></td>
+              <td rowspan="3" id="porcentajeBeneficioMostrado"></td>
             </tr>
             <tr>
               <th scope="row">Cuota 2</th>
               <td><input type="text" class="form-control" id="cuota2" aria-label="Cuota con dos decimales" placeholder="Cuota con dos decimales"></td>
-              <td></td>
-              <td></td>
+              <td id="muestraProbabilidadCuota2"></td>
+              <td id="cantidadApuestaCuota2"></td>
+              <td id="gananciaCuota2"></td>
             </tr>
             <tr>
               <th scope="row">Cuota 3</th>
               <td><input type="text" class="form-control" id="cuota3" aria-label="Cuota con dos decimales" placeholder="Cuota con dos decimales"></td>
-              <td></td>
+              <td id="muestraProbabilidadCuota3"></td>
+              <td id="cantidadApuestaCuota3"></td>
+              <td id="gananciaCuota3"></td>
             </tr>
           </tbody>
         </table>
-        <button type="button" class="btn btn-outline-primary" id="btn-submit" onclick="clickbutton()">Calcular apuestas</button>
+        <div class="row">
+        <input type="text" id="total-apuesta" class="m-3 col-md-4"  placeholder="Introduce el total de tu apuesta">
+
+        <button type="button" class="btn btn-outline-primary col-md-7" id="btn-submit" onclick="clickbutton()">Calcular apuestas</button>
+      </div>
 
               </div>
           </div>
