@@ -9,7 +9,6 @@ function clickbutton() {
     cuota1 = document.getElementById("cuota1").value;
     cuota2 = document.getElementById("cuota2").value;
     cuota3 = document.getElementById("cuota3").value;
-    
     totalApuesta = document.getElementById("total-apuesta").value;
     cuota1div = 1/cuota1;
     cuota2div = 1/cuota2;
@@ -62,5 +61,16 @@ function clickbutton() {
     }else if (totalApuesta == 0) {
         window.alert("Debes introducir el total a apostar")
     }
+
+    if(porcentajeBeneficioTotal > 0){
+        mostrarBfoTotal.classList.add("bg-success")
+    }else{
+        mostrarBfoTotal.classList.add("bg-danger")
+    };
+    if(porcentajeBeneficioTotal > 0){
+        mostrarPorcentaje.classList.add("bg-success")
+    }else{
+        mostrarPorcentaje.classList.add("bg-danger")
+    };
 
 }
