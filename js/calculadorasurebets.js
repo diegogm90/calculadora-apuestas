@@ -63,14 +63,14 @@ function clickbutton() {
     }
 
     if(porcentajeBeneficioTotal > 0){
-        mostrarBfoTotal.classList.add("bg-success")
+        mostrarBfoTotal.classList.add("text-success")
     }else{
-        mostrarBfoTotal.classList.add("bg-danger")
+        mostrarBfoTotal.classList.add("text-danger")
     };
     if(porcentajeBeneficioTotal > 0){
-        mostrarPorcentaje.classList.add("bg-success")
+        mostrarPorcentaje.classList.add("text-success")
     }else{
-        mostrarPorcentaje.classList.add("bg-danger")
+        mostrarPorcentaje.classList.add("text-danger")
     };
 
 }

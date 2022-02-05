@@ -8,3 +8,11 @@
     text-align: center;
 }
 
+.encabezado-cuota{
+    text-transform: uppercase;
+font-weight: bold;
+}
+
+.totales{
+    font-weight: bold;
+}
