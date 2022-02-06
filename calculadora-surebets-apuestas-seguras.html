@@ -19,13 +19,22 @@
       </nav>
     <div class="container">
         <div class="row">
-        <h1 class="mt-3 text-center">Calculadora para surebets</h1>
+        <h1 class="mt-3 text-center">Calculadora de surebets</h1>
         <p>Con la calculadora de Surebets o apuestas seguras podrás obtener fácilmente el ROI que obtendrás con tu surebet. Además, podrás validar de forma exacta si la apuesta que te has planteado o has encontrado en internet te puede realmente dar un beneficio
             seguro, es decir, saber si realmente es una surebet.
         </p>
         <h2 class="text-center">Calcula ahora tus Surebets</h2>
-        <!--Comienzo nueva versión-->
-          <div class="border border-2 border-primary">
+        <p>En calculadoradeapuestas.online podrás calcular tanto surebets con 3 mercados (por ejemplo, en un partido de fútbol, el mercado de gana local, empate o gana visitante) como surebets de dos mercados (por ejemplo, más de 2.5 goles o menos de 2.5 goles en un partido de fútbol o ganador del partido en un evento de tenis).</p>
+        <p>A continuación podrás elegir ambas calculadoras, que las tienes a continuación, pero puedes ir directamente a la que te interesa para calcular tu posible Surebet haciendo click en los siguientes botones.</p>
+        <div class="row justify-content-around">
+        <a type="button" href="#calculadora-3-opciones" class="btn btn-primary col-md-5 mt-2 mb-2">Calcular surebet de 3 opciones</a>
+        <a type="button" href="#calculadora-2-opciones" class="btn btn-primary col-md-5 mt-2 mb-2">Calcular surebet de 2 opciones</a>    
+        </div>    
+      
+      
+      
+      <!--Comienzo nueva versión 3 apuestas-->
+          <div class="border border-2 border-primary mt-4" id="calculadora-3-opciones">
            
               <h3 class="text-center m-3">Calculadora de surebets en mercados de 3 opciones</h3>
                 
@@ -42,7 +51,7 @@
 
                   </div>       
                  
-                  <button type="button" class="btn btn-primary my-4 col-12" id="btn-submit" onclick="clickbutton()">Calcular apuestas</button>
+                  <button type="button" class="btn btn-primary my-4 col-12" id="btn-submit" onclick="clickbutton3()">Calcular apuestas</button>
                  
                  
           </div>
@@ -82,6 +91,70 @@
 
           </div>
         </div>
+        <!--Calculadora de 2 apuestas-->
+        <div class="container border border-2 border-primary mt-4" id="calculadora-2-opciones">
+           
+          <h3 class="text-center m-3">Calculadora de surebets en mercados de 2 opciones</h3>
+            
+              <div class="encabezado-calculadora bg-light">
+                <p class="text-center encabezado-cuota pt-3">Cuota 1</p>
+                <input type="text" class="justify-content-center text-center col-12" id="cuota1-2" aria-label="Cuota con dos decimales" placeholder="Introduce la primera cuota" onchange="this.value = this.value.replace(/,/g, '.')">
+                <p class="text-center encabezado-cuota pt-3">Cuota 2</p>
+                <input type="text" class="justify-content-center text-center col-12" id="cuota2-2" aria-label="Cuota con dos decimales" placeholder="Introduce la segunda cuota" onchange="this.value = this.value.replace(/,/g, '.')">
+                <p class="text-center encabezado-cuota pt-3">TOTAL DE TU APUESTA</p>
+                <input type="text" id="total-apuesta-2" class="col-12 justify-content-center text-center"  placeholder="Introduce el total de tu apuesta">
+
+
+              </div>       
+             
+              <button type="button" class="btn btn-primary my-4 col-12" id="btn-submit" onclick="clickbutton2()">Calcular apuestas</button>
+             
+             
+      </div>
+
+      <div class="container mt-4 border border-light border border-4 mb-5">
+        <div class="row">
+          <h3 class="col-12 text-center text-white bg-black">Desglose de Surebet</h3>
+          <p class="col-3 text-center fw-bold">CUOTA</p>
+          <p class="col-3 text-center fw-bold">% PROB</p>
+          <p class="col-3 text-center fw-bold">APUESTA</p>
+          <p class="col-3 text-center fw-bold">GANANCIA</p>
+        </div>
+        <div class="row resultados">
+          <p class="col-3 text-center">Cuota 1</p>
+          <p class="col-3 text-center" id="muestraProbabilidadCuota1-2">0</p>
+          <p class="col-3 text-center" id="cantidadApuestaCuota1-2">0</p>
+          <p class="col-3 text-center" id="gananciaCuota1-2">0</p>
+          <p class="col-3 text-center">Cuota 2</p>
+          <p class="col-3 text-center" id="muestraProbabilidadCuota2-2">0</p>
+          <p class="col-3 text-center" id="cantidadApuestaCuota2-2">0</p>
+          <p class="col-3 text-center" id="gananciaCuota2-2">0</p>
+          
+          
+          <hr>
+          <div class="row">
+          <p class="col-6 text-center totales">Beneficio TOTAL</p>
+          <p class="col-6 text-center totales">Porcentaje de beneficio</p>
+          <p class="col-6 text-center totales" id="beneficio-total-2">-</p>
+          <p class="col-6 text-center totales" id="porcentaje-beneficio-2">-</p>
+
+        </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+            
+
+    </div>
+    <!--Contenedor de texto posterior a calculadoras-->
+    <div class="container">
+      <h2>¿Cómo funcionan las calculadoras de Surebets?</h2>
+      <p>Las calculadoras de Surebets nos permiten calcular si efectivamente la apuesta que creemos que puede ser una surebet lo es. Nos sirve, por poner un ejemplo, para comprobar una surebet que obtengamos de algún servicio de pago que nos provea de surebets pero veamos que la cuota ha cambiado. Es en estos casos, por ejemplo, cuando una calculadora de surebets nos puede decir de una forma muy fácil y rápida si la apuesta propuesta sigue teniendo ganancia asegurada.</p>
+      <h2>¿Qué son las surebets?</h2>
+      <p>Las surebets son apuestas seguras, de su traducción literal en inglés. Sure significa seguro. Y bet significa apuesta. Por tanto, una surebet se traduce literalmente como apuesta segura, dado que tiene en cuenta varias apuestas que, cruzadas entre sí, nos generan un beneficio asegurado. Por ello, para poder acceder a las surebets que se produzcan, debemos tener cuenta en diferentes casas de apuestas, ya que es altamente inusual que nos encontremos ante una surebet con las cuotas ofrecidas por una sola casa de apuestas. Además, aunque tuviesemos la fortuna de que así sea, dado que es un error de cálculo, nos arriesgamos a que en el momento que la casa de apuestas lo detecte nos anule la apuesta e incluso proceda al cierre de nuestra cuenta de apuestas deportivas.</p>
+      <h2>¿Cómo se calcula una apuesta segura o surebet en un mercado de 3 opciones?</h2>
+      <p>Aunque para la mayoría de gente esto pueda no ser relevante, ya que tienes a tu disposición nuestra calculadora para poder calcular estas surebets de forma cómoda y rápida sin tener que hacer cálculos, puede que estés interesado en conocer la fórmula que se utiliza para el cálculo de surebets en mercados de 3 opciones, como puede ser un partido de fútbol al mercado de ganador del partido, con 3 opciones que son: ganador el equipo local, empate y ganador el equipo visitante.</p>
     </div>
     <script src="./js/calculadorasurebets.js"></script>
 </body>

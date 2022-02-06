@@ -3,8 +3,8 @@ cuota2 = 0;
 cuota3 = 0;
 totalApuesta = 0;
 
-//función que recoge valores
-function clickbutton() {
+//función calculadora surebets 3 opciones
+function clickbutton3() {
     
     cuota1 = document.getElementById("cuota1").value;
     cuota2 = document.getElementById("cuota2").value;
@@ -71,6 +71,81 @@ function clickbutton() {
         mostrarPorcentaje.classList.add("text-success")
     }else{
         mostrarPorcentaje.classList.add("text-danger")
+    };
+
+}
+
+
+cuota12 = 0;
+cuota22 = 0;
+totalApuesta2 = 0;
+//funcion calculadora 2 opciones
+function clickbutton2() {
+    
+    cuota12 = document.getElementById("cuota1-2").value;
+    cuota22 = document.getElementById("cuota2-2").value;
+    totalApuesta2 = document.getElementById("total-apuesta-2").value;
+    cuota1div2 = 1/cuota12;
+    cuota2div2 = 1/cuota22;
+    
+    beneficio2 = cuota1div2 + cuota2div2;
+    porcentajePagos2 = (1/beneficio2) * 100;
+    probCuota12 = (cuota1div2 * porcentajePagos2).toFixed(2);
+    probCuota22 = (cuota2div2 * porcentajePagos2).toFixed(2);
+   
+    apuestaCuota12 = (totalApuesta2 * (probCuota12/100)).toFixed(2);
+    apuestaCuota22 = (totalApuesta2 * (probCuota22/100)).toFixed(2);
+    
+    bfoCuota12 = (cuota12 * apuestaCuota12).toFixed(2);
+    bfoCuota22 = (cuota22 * apuestaCuota22).toFixed(2);
+    
+    arrResultados2 = [bfoCuota12, bfoCuota22];
+    bfoMinimo2 = Math.min(...arrResultados2);
+    bfoMinimoRedondeado2 = bfoMinimo2.toFixed(2);
+    netoMinimoTotal2 = bfoMinimoRedondeado2 - totalApuesta2;
+    netoMinimoRed2 = netoMinimoTotal2.toFixed(2);
+    porcentajeBeneficioTotal2 = ((netoMinimoTotal2 / totalApuesta2) * 100).toFixed(2);
+    let mostrarBfoTotal2 = document.getElementById("beneficio-total-2");
+    mostrarBfoTotal2.innerHTML = netoMinimoRed2 + "€";
+    let mostrarPorcentaje2 = document.getElementById("porcentaje-beneficio-2");
+    mostrarPorcentaje2.innerHTML = porcentajeBeneficioTotal2 + "%";
+    let sitioProbabilidadCuota12 = document.getElementById("muestraProbabilidadCuota1-2")
+    let sitioProbabilidadCuota22 = document.getElementById("muestraProbabilidadCuota2-2")
+    
+    sitioProbabilidadCuota12.innerHTML = probCuota12 + "%";
+    sitioProbabilidadCuota22.innerHTML = probCuota22 + "%";
+   
+    let sitioCantidad12 = document.getElementById("cantidadApuestaCuota1-2");
+    let sitioCantidad22 = document.getElementById("cantidadApuestaCuota2-2");
+    
+    sitioCantidad12.innerHTML = apuestaCuota12 + "€";
+    sitioCantidad22.innerHTML = apuestaCuota22 + "€";
+    
+    let sitioGanancia12 = document.getElementById ("gananciaCuota1-2");
+    let sitioGanancia22 = document.getElementById ("gananciaCuota2-2");
+  
+    sitioGanancia12.innerHTML = bfoCuota12 + "€";
+    sitioGanancia22.innerHTML = bfoCuota22 + "€";
+   
+
+
+
+
+    if(cuota12 == 0 || cuota22 == 0){
+        window.alert("Debes introducir las 2 cuotas")
+    }else if (totalApuesta2 == 0) {
+        window.alert("Debes introducir el total a apostar")
+    }
+
+    if(porcentajeBeneficioTotal2 > 0){
+        mostrarBfoTotal2.classList.add("text-success")
+    }else{
+        mostrarBfoTotal2.classList.add("text-danger")
+    };
+    if(porcentajeBeneficioTotal2 > 0){
+        mostrarPorcentaje2.classList.add("text-success")
+    }else{
+        mostrarPorcentaje2.classList.add("text-danger")
     };
 
 }
